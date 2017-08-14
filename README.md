@@ -22,6 +22,7 @@ title: Cryptocurrencies
 ## Chapter 2 - Setup Developer Environment<a id="chapter-2"></a>
 
 * Download and Install
+
     * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (version 8+)
         * Java SE Runtime Environment (JRE)
             * Includes Java Compiler `javac` (translate Java to bytecode for the JVM)
@@ -31,12 +32,36 @@ title: Cryptocurrencies
             * Show version installed
                 ```
                 java -version
+                javac -fullversion
                 ```
             * Compile and Run from Command Line (generate .class file)
                 ```
                 javac HelloWorld/HelloWorld.java
                 cd ./HelloWorld; java HelloWorld; cd ..
                 ```
+
+    * [JDK 9](http://jdk.java.net/9/)
+        * Show location of all JVM installations
+            ```
+            /usr/libexec/java_home -V
+            ```
+
+        * Set and check JAVA_HOME
+            ```
+            export JAVA_HOME=/Library/Java/Home
+            echo $JAVA_HOME
+            ```
+
+        * TODO - JShell (REPL for Java 9)
+            * Links
+                * https://docs.oracle.com/javase/9/tools/jshell.htm
+                * https://docs.oracle.com/javase/9/tools/tools-and-command-reference.htm
+                * https://www.jclarity.com/2015/04/15/java-9-repl-getting-started-guide/
+            ```
+            $JAVA_HOME/bin/jshell
+            /help intro
+            ```
+        * TODO - [JEnv](https://github.com/gcuisinier/jenv)
 
     * [IntelliJ IDE](https://www.jetbrains.com/idea/download/#)
         * Create New Java Project in IntelliJ
