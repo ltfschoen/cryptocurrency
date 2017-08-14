@@ -1,5 +1,20 @@
 public class Bus {
 
+    // Function definition with parameter, access modifier and return type
+    public static void showFareType(int fareCode) {
+        // Switch statement
+        String fareType;
+        switch(fareCode) {
+            case 111: fareType = "Single";
+                break;
+            case 222: fareType = "Concession";
+                break;
+            default: fareType = "Free";
+                break;
+        }
+        System.out.println("Fare type is: " + fareType);
+    }
+
     /* Bus example */
     public static void main(String[] args) {
 
@@ -19,8 +34,19 @@ public class Bus {
         // Print
         String driverName;
         driverName = "Luke";
-        System.out.println(driverName.length());
-        System.out.println("Bus driver " + driverName.toUpperCase());
+        int driverSize = driverName.length();
+
+        // Variable Scope within block braces, If statement
+        if (graffitiAllowed) {
+            System.out.println("Bus driver " + driverName.toUpperCase());
+        } else if (!graffitiAllowed) {
+            System.out.println("Bus driver " + driverName.toLowerCase());
+        } else {
+            System.out.println("No bus driver");
+        }
+
+        // Function Call with argument
+        showFareType(111);
     }
 
 }
