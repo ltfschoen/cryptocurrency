@@ -1,7 +1,7 @@
 public class Bus {
 
     // Function definition with parameter, access modifier and return type
-    public static void showFareType(int fareCode) {
+    public static String getFareType(int fareCode) {
         // Switch statement
         String fareType;
         switch(fareCode) {
@@ -12,7 +12,14 @@ public class Bus {
             default: fareType = "Free";
                 break;
         }
-        System.out.println("Fare type is: " + fareType);
+        return fareType;
+    }
+
+    public static int getRandomAge() {
+        double randomNumber = Math.random(); // random decimal value 0 to less than 1
+        randomNumber = randomNumber * 100;
+        int randomAge = (int) randomNumber;
+        return randomAge;
     }
 
     /* Bus example */
@@ -34,6 +41,8 @@ public class Bus {
         // Print
         String driverName;
         driverName = "Luke";
+        int randomDriverAge = getRandomAge();
+        System.out.println("Bus driver aged " + randomDriverAge);
         int driverSize = driverName.length();
 
         // Variable Scope within block braces, If statement
@@ -46,7 +55,8 @@ public class Bus {
         }
 
         // Function Call with argument
-        showFareType(111);
+        String fareType = getFareType(111);
+        System.out.println("Fare type is: " + fareType);
     }
 
 }
