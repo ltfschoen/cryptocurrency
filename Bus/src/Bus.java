@@ -1,6 +1,11 @@
 public class Bus {
 
-    // Function definition with parameter, access modifier and return type
+
+    /**
+     * Generate random age function definition. Javadocs comments
+     * @param fareCode parameter
+     * @return fare type is return type from public access modifier
+     */
     public static String getFareType(int fareCode) {
         // Switch statement
         String fareType;
