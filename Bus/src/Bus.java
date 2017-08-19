@@ -27,6 +27,52 @@ public class Bus {
         return randomAge;
     }
 
+    public static double getAverageDistanceBetweenStops(double [] stops) {
+        int size = stops.length;
+        double totalDistance = 0;
+        for (int i = 0; i < size; i++) {
+            totalDistance += stops[i];
+        }
+        double average = totalDistance / size;
+        return average;
+    }
+
+    /**
+     * Search for shortest distance between bus stops
+     * @param stops array of distances between bus stops
+     * @return double shortest distance betwen bus stops
+     */
+    public static double getShortestDistanceBetweenStops(double [] stops) {
+        int size = stops.length;
+        double min = stops[0];
+        for (int i = 1; i < size; i++) {
+            if (stops[i] < min) {
+                min = stops[i];
+            }
+        }
+        return min;
+    }
+
+    public static void drive() {
+        boolean stopButtonPressed = false;
+        double [][] stops = new double [][] {{10.0, 5.6, 20.7, 3.9, 30.4}, {5.0, 2.6, 10.7, 2.9, 20.4}};
+        int i = 0;
+        while(!stopButtonPressed) {
+            System.out.println("Passing stop: " + stops[0][i]);
+            i++;
+            if (stops[0][i] == 30.4) {
+                stopButtonPressed = true;
+            }
+        }
+        System.out.println("Stopping at bus stop: " + stops[0][i]);
+
+        double averageDistanceBetweenStops = getAverageDistanceBetweenStops(stops[0]);
+        System.out.println("Average distance between stops: " + averageDistanceBetweenStops);
+
+        double shortestDistanceBetweenStops = getShortestDistanceBetweenStops(stops[0]);
+        System.out.println("Shortest distance between stops: " + shortestDistanceBetweenStops);
+    }
+
     /* Bus example */
     public static void main(String[] args) {
 
@@ -62,6 +108,8 @@ public class Bus {
         // Function Call with argument
         String fareType = getFareType(111);
         System.out.println("Fare type is: " + fareType);
+
+        drive();
     }
 
 }
